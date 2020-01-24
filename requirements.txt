@@ -8,4 +8,3 @@ opuslib
 jishaku
 numpy
 nekos.py
-io
