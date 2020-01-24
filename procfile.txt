@@ -1,0 +1,1 @@
+worker: python Cyber_Tyan.py
