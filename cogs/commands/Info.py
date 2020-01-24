@@ -16,7 +16,7 @@ class InfoCog(commands.Cog):
         emb.add_field(name='Присоединился к серверу:', value=str(member.joined_at)[:16])
         emb.add_field(name='Присоединился к дискорду:', value=str(member.created_at)[:16])
         emb.add_field(name='ID пользователя:', value=member.id)
-        if member.activity.name is not 'Custom Status':
+        if member.activity.name != 'Custom Status':
             emb.add_field(name='Играет в:', value=member.activity)
         else:
             pass
