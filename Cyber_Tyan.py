@@ -12,7 +12,7 @@ bot.load_extension("jishaku")
 @bot.command()
 async def ping(ctx):
     latency = bot.latency
-    a = await ctx.send(latency)
+    await ctx.send(latency)
 
 @bot.command()
 async def load(ctx, extensions):
