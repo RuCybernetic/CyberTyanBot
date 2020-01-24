@@ -4,7 +4,7 @@ from discord.ext import commands
 
 
 TOKEN = os.environ.get('BOT_TOKEN')
-bot = commands.Bot(command_prefix='$')
+bot = commands.Bot(command_prefix='!')
 
 bot.load_extension("jishaku")
 
