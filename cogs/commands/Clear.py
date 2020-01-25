@@ -13,8 +13,8 @@ class ClearCog(commands.Cog):
         else:
             await ctx.message.delete()
             await ctx.channel.purge(limit=amount)
-        emb = discord.Embed(title='Удаление сообщений', description=f'Администратор {ctx.author.mention} почистил чат.')
-        await ctx.send(embed=emb, delete_after=10)
+            emb = discord.Embed(title='Удаление сообщений', description=f'Администратор {ctx.author.mention} почистил чат.')
+            await ctx.send(embed=emb, delete_after=10)
 
 def setup(bot):
     bot.add_cog(ClearCog(bot))
