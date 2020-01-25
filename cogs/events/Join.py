@@ -12,7 +12,7 @@ class OnMemberJoinCog(commands.Cog):
             role = discord.utils.get(member.guild.roles, name='Гость')
             await member.add_roles(role)
             a = ('зови своих друзей', 'пиши если чо', 'заходи не стесняйся')
-            channel = self.bot.get_channel(647293816730288128)
+            channel = self.bot.get_channel(669129314251309056)
             em = discord.Embed(description=f'{member.mention}, {random.choice(a)}', color=0x00b820)
             em.set_author(name='Добро пожаловать на сервер')
             await channel.send(embed=em)
