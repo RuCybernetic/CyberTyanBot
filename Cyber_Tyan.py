@@ -8,6 +8,7 @@ bot = commands.Bot(command_prefix='!')
 
 bot.load_extension("jishaku")
 
+bot.remove_command('help')
 
 @bot.command()
 async def ping(ctx):
