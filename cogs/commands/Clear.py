@@ -10,7 +10,7 @@ class ClearCog(commands.Cog):
     async def clear(self, ctx, amount: int = None):
         if amount is None:
             await ctx.message.delete()
-            await ctx.send('Укажите кол-во сообщений которые надо удалить', delete_after=10)
+            await ctx.send('Укажите кол-во сообщений которые надо удалить', delete_after=5)
         else:
             await ctx.message.delete()
             await ctx.channel.purge(limit=amount)
