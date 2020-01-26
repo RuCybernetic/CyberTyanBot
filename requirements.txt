@@ -4,6 +4,7 @@ aiohttp
 websockets
 chardet
 PyNaCl
+ffmpeg
 opuslib
 jishaku
 numpy
