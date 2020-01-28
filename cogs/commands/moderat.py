@@ -12,7 +12,7 @@ class ModerationCog(commands.Cog):
     async def clear(self, ctx, amount: int = None):
         await ctx.message.delete()
         if amount is None:
-            await ctx.send('Укажите кол-во сообщений которые надо удалить', delete_after=5)
+            await ctx.send('Укажите кол-во сообщений которые надо удалить', delete_after=10)
         else:
             await ctx.channel.purge(limit=amount)
             emb = discord.Embed(title='Удаление сообщений',
@@ -25,9 +25,9 @@ class ModerationCog(commands.Cog):
         logs = self.bot.get_channel(669129314251309056)
         await ctx.message.delete()
         if member == None:
-            await ctx.send('Укажите кому дать роль', delete_after=5)
+            await ctx.send('Укажите кому дать роль', delete_after=10)
         elif role == None:
-            await ctx.send('Укажите какую роль дать', delete_after=5)
+            await ctx.send('Укажите какую роль дать', delete_after=10)
         else:
             await member.add_roles(role)
             emb = discord.Embed(title='Выдача роли',
@@ -40,9 +40,9 @@ class ModerationCog(commands.Cog):
         logs = self.bot.get_channel(669129314251309056)
         await ctx.message.delete()
         if member is None:
-            await ctx.send('Укажите кого надо забанить')
+            await ctx.send('Укажите кого надо забанить', delete_after=10)
         elif member is ctx.message.author:
-            await ctx.send('Ты шо дурной, зачем банить самого себя?')
+            await ctx.send('Ты шо дурной, зачем банить самого себя?', delete_after=10)
         else:
             if reason is None:
                 emb = discord.Embed(title='Бан', description=f'Админ {ctx.author.mention} забанил пользователя {member}.')
@@ -61,9 +61,9 @@ class ModerationCog(commands.Cog):
         logs = self.bot.get_channel(669129314251309056)
         await ctx.message.delete()
         if member == None:
-            await ctx.send('Укажите кого надо замутить')
+            await ctx.send('Укажите кого надо замутить', delete_after=10)
         elif member == ctx.message.author:
-            await ctx.send("Ты шо дурной, зачем мутить самого себя?")
+            await ctx.send("Ты шо дурной, зачем мутить самого себя?", delete_after=10)
         else:
             emb = discord.Embed(title="Мут", description=f'Админ {ctx.author.mention} замутил пользователя {member}')
             role = discord.utils.get(ctx.message.guild.roles, name='Mute')
@@ -76,7 +76,7 @@ class ModerationCog(commands.Cog):
         logs = self.bot.get_channel(669129314251309056)
         await ctx.message.delete()
         if member == None:
-            ctx.send("Укажите кого надо размутить")
+            ctx.send("Укажите кого надо размутить", delete_after=10)
         else:
             emb = discord.Embed(title="Анмут", description=f'Админ {ctx.author.mention} размутил пользователя {member}')
             role = discord.utils.get(ctx.message.guild.roles, name="Mute")
