@@ -9,10 +9,8 @@ class HelpCog(commands.Cog):
     @commands.command(aliases=['хелп'])
     async def help(self, ctx):
         prefix = '!'
-        emb = discord.Embed(title='Команды сервера: ', color=discord.Color(random.randint(0x000000, 0xFFFFFF)), inline=False)
+        emb = discord.Embed(title='Команды сервера: ', description=f'`{prefix}help`', color=discord.Color(random.randint(0x000000, 0xFFFFFF)), inline=False)
         emb.set_thumbnail(url=self.bot.user.avatar_url)
-        emb.add_field(name=f'`{prefix}help` - Вызывает это сообщение.',
-                      inline=False)
         emb.add_field(name='Модерация: только для роли [Админ] ',
                       value=f'`{prefix}clear` `{prefix}add_role` `{prefix}ban` `{prefix}mute` `{prefix}unmute` `{prefix}call`',
                       inline=False)
