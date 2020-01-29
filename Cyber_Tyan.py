@@ -43,4 +43,8 @@ for filename in os.listdir('./cogs/events'):
     if filename.endswith('.py'):
         bot.load_extension(f'cogs.events.{filename[:-3]}')
 
+for filename in os.listdir('./cogs/botdb'):
+    if filename.endswith('.py'):
+        bot.load_extension(f'cogs.botdb.{filename[:-3]}')
+
 bot.run(TOKEN)
