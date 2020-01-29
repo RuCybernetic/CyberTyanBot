@@ -59,7 +59,7 @@ class OnMessageCog(commands.Cog):
                 msg = res[5]
                 print(msg)
                 msg += 1
-                xp += 1000
+                xp += 50
                 if xp >= 1000 + 100 * lvl:
                     xp = xp - (1000 + 100 * lvl)
                     lvl += 1
