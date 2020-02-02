@@ -47,13 +47,21 @@ class ModerationCog(commands.Cog):
             if reason is None:
                 emb = discord.Embed(title='Бан', description=f'Админ {ctx.author.mention} забанил пользователя {member}.')
                 await logs.send(embed=emb)
-                await member.send(f'Вас забанили на сервере {ctx.guild.name}')
-                await ctx.guild.ban(member)
+                try:
+                    await member.send(f'Вас забанили на сервере {ctx.guild.name}')
+                except Exception:
+                    print('Ошибочка: Кажется я не могу писать в личку')
+                finally:
+                    await ctx.guild.ban(member)
             elif reason is not None:
                 emb = discord.Embed(title='Бан', description=f'Админ {ctx.author.mention} забанил пользователя {member} по причине {reason}.')
                 await logs.send(embed=emb)
-                await member.send(f'Вас забанили на сервере {ctx.guild.name} по причине {reason}.')
-                await ctx.guild.ban(member, reason=reason)
+                try:
+                    await member.send(f'Вас забанили на сервере {ctx.guild.name} по причине {reason}.')
+                except Exception:
+                    print('Ошибочка: Кажется я не могу писать в личку')
+                finally:
+                    await ctx.guild.ban(member, reason=reason)
 
     @commands.command(aliases=['мут'])
     @commands.has_role('Админ')
